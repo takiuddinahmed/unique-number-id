@@ -1,0 +1,33 @@
+{
+  "name": "unique-number-id",
+  "version": "1.0.1",
+  "description": "Node.js library to create unique number id",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "unique",
+    "unique-number",
+    "unique-number-generator",
+    "nodejs"
+  ],
+  "author": "Takiuddin Ahmed <taki1502106@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takiuddinahmed/unique-number-id.git"
+  },
+  "homepage": "https://github.com/takiuddinahmed/unique-number-id.git#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.2",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  }
+}
