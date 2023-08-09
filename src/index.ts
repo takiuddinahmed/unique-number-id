@@ -12,7 +12,7 @@ let maxIncrementedValue = 9;
  * @param option - { deviceId - device number, min - 0, max - 99 }
  * @return number
  */
-export default function (option?: IOptions) {
+export function uniqueNumberId  (option?: IOptions) {
   const deviceId = option?.deviceId || getRandomNumber();
   if(deviceId > 99){
     throw new Error("Device id limit exceeded. Max acceptable value of device id is 99. ")
@@ -32,22 +32,18 @@ export default function (option?: IOptions) {
   return generateUniqueNumber(timestamp, deviceId, incrementedValue);
 }
 
-/** @internal */
-export function generateUniqueNumber(
+ function generateUniqueNumber(
   timestamp: number,
   deviceId: number,
   incrementedValue: number
 ) {
  return Number(timestamp.toString() + ""+deviceId.toString()+""+incrementedValue.toString());
 }
-
-/** @internal */
-export function getRandomNumber() {
+ function getRandomNumber() {
   return Math.floor(Math.random() * 9);
 }
 
-/** @internal */
-export function getIncrementedValue(timestamp: number) {
+ function getIncrementedValue(timestamp: number) {
   if (prevTimeStamp === timestamp) {
     incrementedValue += 1;
   } else {
@@ -57,7 +53,6 @@ export function getIncrementedValue(timestamp: number) {
   return incrementedValue;
 }
 
-/** @internal */
-export function getTimeStamp() {
+ function getTimeStamp() {
   return new Date().getTime();
 }
