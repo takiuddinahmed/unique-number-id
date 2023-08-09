@@ -6,7 +6,12 @@ let prevTimeStamp = getTimeStamp();
 let incrementedValue = 1;
 let maxIncrementedValue = 9;
 
-
+/**
+ * Return unique number
+ *
+ * @param option - { deviceId - device number, max 99 }
+ * @return number
+ */
 export default function (option?: IOptions) {
   const deviceId = option?.deviceId || getRandomNumber();
   if(deviceId < 10){
