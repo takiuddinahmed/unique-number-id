@@ -14,16 +14,16 @@ yarn add unique-number-id
 Import generate function from the package:
 
 ```typescript
-import getUniqueNumber from 'unique-number-id'
+import { uniqueNumberId } from 'unique-number-id'
 // or
-const  getUniqueNumber  = require('unique-number-id');
+const  { uniqueNumberId }  = require('unique-number-id');
 ```
 
 ### Generating a Unique Number
 To generate a unique number, simply call the function:
 
 ```typescript
-const uniqueNumber = getUniqueNumber();
+const uniqueNumber = uniqueNumberId();
 console.log('Generated Unique Number:', uniqueNumber);
 ```
 
@@ -31,7 +31,7 @@ console.log('Generated Unique Number:', uniqueNumber);
 f you want to generate a unique number based on a specific device ID, provide the deviceId parameter:
 
 ```typescript
-const uniqueNumber = getUniqueNumber({ deviceId: 3 });
+const uniqueNumber = uniqueNumberId({ deviceId: 3 });
 console.log('Generated Unique Number for Device 3:', uniqueNumber);
 ```
 
