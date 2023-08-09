@@ -54,14 +54,19 @@ describe("Unit test", () => {
     it("Should return unique number",()=>{
         const storage : Record<number, boolean>={};
         for(let i =0; i< 1000;i++){
-          const num = generateUniqueNumber({deviceId: 0});
+          const num = generateUniqueNumber();
           expect(storage[num]).toBeFalsy();
           storage[num] = true;
         }
-
-        fs.writeFileSync(__dirname+"/"+"numlist.log", JSON.stringify(storage))
-
     })
+
+    it('should not work for device id larger than 99', function () {
+      expect(()=>generateUniqueNumber({deviceId: 100})).toThrowError();
+    });
+    it('should not work for negative device id', function () {
+      expect(()=>generateUniqueNumber({deviceId: -1})).toThrowError();
+    });
+
   })
 
 });

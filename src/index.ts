@@ -9,11 +9,17 @@ let maxIncrementedValue = 9;
 /**
  * Return unique number
  *
- * @param option - { deviceId - device number, max 99 }
+ * @param option - { deviceId - device number, min - 0, max - 99 }
  * @return number
  */
 export default function (option?: IOptions) {
   const deviceId = option?.deviceId || getRandomNumber();
+  if(deviceId > 99){
+    throw new Error("Device id limit exceeded. Max acceptable value of device id is 99. ")
+  }
+  if(deviceId <0){
+    throw new Error("Device id should not be negative.")
+  }
   if(deviceId < 10){
     maxIncrementedValue = 99;
   }
